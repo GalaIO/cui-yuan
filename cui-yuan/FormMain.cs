@@ -35,7 +35,7 @@ namespace cui_yuan
 
             if (comboBox_videoPlayer.Items.Count == 0)
             {
-                MessageBox.Show("没有找到摄像头. 请插好摄像头并重启软件");
+                MessageBox.Show("没有找到摄像头. 请插好摄像头后，点击确定");
                 return false;
             }
 

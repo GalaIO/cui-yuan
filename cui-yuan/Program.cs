@@ -16,10 +16,8 @@ namespace cui_yuan
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             FormMain form = new FormMain();
-            if (form.Init())
-            {
-                Application.Run(form);
-            }
+            while (!form.Init()) { }
+            Application.Run(form);
         }
     }
 }
