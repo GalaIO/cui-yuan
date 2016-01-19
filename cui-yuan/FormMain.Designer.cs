@@ -31,22 +31,22 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPage_Shopin = new System.Windows.Forms.TabPage();
-            this.tabPage_Shopout = new System.Windows.Forms.TabPage();
             this.panel_shopin = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_Shopin = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_shopin_photo = new System.Windows.Forms.TableLayoutPanel();
             this.panel_videoPlayer = new System.Windows.Forms.Panel();
-            this.panel_photoPreview = new System.Windows.Forms.Panel();
             this.groupBox_videoPlayer = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel_videoPlayer = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox_videoPlayer = new System.Windows.Forms.ComboBox();
+            this.videoPlayer_shopin = new AForge.Controls.VideoSourcePlayer();
+            this.panel_photoPreview = new System.Windows.Forms.Panel();
             this.groupBox_photoPreview = new System.Windows.Forms.GroupBox();
             this.panel_shopin_detail = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_detail = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox_weight = new System.Windows.Forms.GroupBox();
             this.groupBox_notes = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel_videoPlayer = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox_videoPlayer = new System.Windows.Forms.ComboBox();
-            this.videoPlayer_shopin = new AForge.Controls.VideoSourcePlayer();
+            this.tabPage_Shopout = new System.Windows.Forms.TabPage();
             this.panelMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPage_Shopin.SuspendLayout();
@@ -54,12 +54,12 @@
             this.tableLayoutPanel_Shopin.SuspendLayout();
             this.tableLayoutPanel_shopin_photo.SuspendLayout();
             this.panel_videoPlayer.SuspendLayout();
-            this.panel_photoPreview.SuspendLayout();
             this.groupBox_videoPlayer.SuspendLayout();
-            this.panel_shopin_detail.SuspendLayout();
-            this.tableLayoutPanel_detail.SuspendLayout();
             this.tableLayoutPanel_videoPlayer.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel_photoPreview.SuspendLayout();
+            this.panel_shopin_detail.SuspendLayout();
+            this.tableLayoutPanel_detail.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
@@ -93,16 +93,8 @@
             this.tabPage_Shopin.TabIndex = 0;
             this.tabPage_Shopin.Text = "收货";
             this.tabPage_Shopin.UseVisualStyleBackColor = true;
-            // 
-            // tabPage_Shopout
-            // 
-            this.tabPage_Shopout.Location = new System.Drawing.Point(4, 29);
-            this.tabPage_Shopout.Name = "tabPage_Shopout";
-            this.tabPage_Shopout.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Shopout.Size = new System.Drawing.Size(973, 579);
-            this.tabPage_Shopout.TabIndex = 1;
-            this.tabPage_Shopout.Text = "发货";
-            this.tabPage_Shopout.UseVisualStyleBackColor = true;
+            this.tabPage_Shopin.Enter += new System.EventHandler(this.tabPage_Shopin_Enter);
+            this.tabPage_Shopin.Leave += new System.EventHandler(this.tabPage_Shopin_Leave);
             // 
             // panel_shopin
             // 
@@ -153,15 +145,6 @@
             this.panel_videoPlayer.Size = new System.Drawing.Size(424, 394);
             this.panel_videoPlayer.TabIndex = 0;
             // 
-            // panel_photoPreview
-            // 
-            this.panel_photoPreview.Controls.Add(this.groupBox_photoPreview);
-            this.panel_photoPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_photoPreview.Location = new System.Drawing.Point(433, 3);
-            this.panel_photoPreview.Name = "panel_photoPreview";
-            this.panel_photoPreview.Size = new System.Drawing.Size(425, 394);
-            this.panel_photoPreview.TabIndex = 1;
-            // 
             // groupBox_videoPlayer
             // 
             this.groupBox_videoPlayer.Controls.Add(this.tableLayoutPanel_videoPlayer);
@@ -172,6 +155,60 @@
             this.groupBox_videoPlayer.TabIndex = 0;
             this.groupBox_videoPlayer.TabStop = false;
             this.groupBox_videoPlayer.Text = "拍照摄像头";
+            // 
+            // tableLayoutPanel_videoPlayer
+            // 
+            this.tableLayoutPanel_videoPlayer.ColumnCount = 1;
+            this.tableLayoutPanel_videoPlayer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_videoPlayer.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel_videoPlayer.Controls.Add(this.videoPlayer_shopin, 0, 1);
+            this.tableLayoutPanel_videoPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_videoPlayer.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel_videoPlayer.Name = "tableLayoutPanel_videoPlayer";
+            this.tableLayoutPanel_videoPlayer.RowCount = 2;
+            this.tableLayoutPanel_videoPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_videoPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_videoPlayer.Size = new System.Drawing.Size(418, 366);
+            this.tableLayoutPanel_videoPlayer.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comboBox_videoPlayer);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(412, 44);
+            this.panel1.TabIndex = 0;
+            // 
+            // comboBox_videoPlayer
+            // 
+            this.comboBox_videoPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_videoPlayer.FormattingEnabled = true;
+            this.comboBox_videoPlayer.Location = new System.Drawing.Point(39, 9);
+            this.comboBox_videoPlayer.Name = "comboBox_videoPlayer";
+            this.comboBox_videoPlayer.Size = new System.Drawing.Size(323, 27);
+            this.comboBox_videoPlayer.TabIndex = 0;
+            // 
+            // videoPlayer_shopin
+            // 
+            this.videoPlayer_shopin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.videoPlayer_shopin.Location = new System.Drawing.Point(3, 53);
+            this.videoPlayer_shopin.Name = "videoPlayer_shopin";
+            this.videoPlayer_shopin.Size = new System.Drawing.Size(412, 310);
+            this.videoPlayer_shopin.TabIndex = 1;
+            this.videoPlayer_shopin.Text = "VideoPlayer";
+            this.videoPlayer_shopin.VideoSource = null;
+            // 
+            // panel_photoPreview
+            // 
+            this.panel_photoPreview.Controls.Add(this.groupBox_photoPreview);
+            this.panel_photoPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_photoPreview.Location = new System.Drawing.Point(433, 3);
+            this.panel_photoPreview.Name = "panel_photoPreview";
+            this.panel_photoPreview.Size = new System.Drawing.Size(425, 394);
+            this.panel_photoPreview.TabIndex = 1;
             // 
             // groupBox_photoPreview
             // 
@@ -227,50 +264,15 @@
             this.groupBox_notes.TabStop = false;
             this.groupBox_notes.Text = "备注";
             // 
-            // tableLayoutPanel_videoPlayer
+            // tabPage_Shopout
             // 
-            this.tableLayoutPanel_videoPlayer.ColumnCount = 1;
-            this.tableLayoutPanel_videoPlayer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_videoPlayer.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel_videoPlayer.Controls.Add(this.videoPlayer_shopin, 0, 1);
-            this.tableLayoutPanel_videoPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_videoPlayer.Location = new System.Drawing.Point(3, 25);
-            this.tableLayoutPanel_videoPlayer.Name = "tableLayoutPanel_videoPlayer";
-            this.tableLayoutPanel_videoPlayer.RowCount = 2;
-            this.tableLayoutPanel_videoPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_videoPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_videoPlayer.Size = new System.Drawing.Size(418, 366);
-            this.tableLayoutPanel_videoPlayer.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.comboBox_videoPlayer);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(412, 44);
-            this.panel1.TabIndex = 0;
-            // 
-            // comboBox_videoPlayer
-            // 
-            this.comboBox_videoPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_videoPlayer.FormattingEnabled = true;
-            this.comboBox_videoPlayer.Location = new System.Drawing.Point(39, 9);
-            this.comboBox_videoPlayer.Name = "comboBox_videoPlayer";
-            this.comboBox_videoPlayer.Size = new System.Drawing.Size(323, 27);
-            this.comboBox_videoPlayer.TabIndex = 0;
-            // 
-            // videoPlayer_shopin
-            // 
-            this.videoPlayer_shopin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.videoPlayer_shopin.Location = new System.Drawing.Point(3, 53);
-            this.videoPlayer_shopin.Name = "videoPlayer_shopin";
-            this.videoPlayer_shopin.Size = new System.Drawing.Size(412, 310);
-            this.videoPlayer_shopin.TabIndex = 1;
-            this.videoPlayer_shopin.Text = "VideoPlayer";
-            this.videoPlayer_shopin.VideoSource = null;
+            this.tabPage_Shopout.Location = new System.Drawing.Point(4, 29);
+            this.tabPage_Shopout.Name = "tabPage_Shopout";
+            this.tabPage_Shopout.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Shopout.Size = new System.Drawing.Size(973, 579);
+            this.tabPage_Shopout.TabIndex = 1;
+            this.tabPage_Shopout.Text = "发货";
+            this.tabPage_Shopout.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -280,6 +282,7 @@
             this.Controls.Add(this.panelMain);
             this.Name = "FormMain";
             this.Text = "润无声珠宝";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.panelMain.ResumeLayout(false);
             this.tabControlMain.ResumeLayout(false);
             this.tabPage_Shopin.ResumeLayout(false);
@@ -287,12 +290,12 @@
             this.tableLayoutPanel_Shopin.ResumeLayout(false);
             this.tableLayoutPanel_shopin_photo.ResumeLayout(false);
             this.panel_videoPlayer.ResumeLayout(false);
-            this.panel_photoPreview.ResumeLayout(false);
             this.groupBox_videoPlayer.ResumeLayout(false);
-            this.panel_shopin_detail.ResumeLayout(false);
-            this.tableLayoutPanel_detail.ResumeLayout(false);
             this.tableLayoutPanel_videoPlayer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel_photoPreview.ResumeLayout(false);
+            this.panel_shopin_detail.ResumeLayout(false);
+            this.tableLayoutPanel_detail.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
