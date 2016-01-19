@@ -185,6 +185,7 @@
             this.comboBox_videoPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_videoPlayer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_videoPlayer.FormattingEnabled = true;
             this.comboBox_videoPlayer.Location = new System.Drawing.Point(39, 9);
             this.comboBox_videoPlayer.Name = "comboBox_videoPlayer";
