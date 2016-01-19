@@ -16,10 +16,18 @@ namespace cui_yuan
         public FormMain()
         {
             InitializeComponent();
-            InitCam();
         }
 
-        private void InitCam()
+        public bool Init()
+        {
+            bool ret = true;
+
+            ret &= InitCam() ;
+
+            return ret;
+        }
+
+        private bool InitCam()
         {
             comboBox_videoPlayer.DataSource = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             comboBox_videoPlayer.DisplayMember = "name";
@@ -28,9 +36,11 @@ namespace cui_yuan
             if (comboBox_videoPlayer.Items.Count == 0)
             {
                 MessageBox.Show("没有找到摄像头. 请插好摄像头并重启软件");
+                return false;
             }
 
             comboBox_videoPlayer.SelectedIndex = 0;
+            return true;
         }
     }
 }
