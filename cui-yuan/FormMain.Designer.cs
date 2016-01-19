@@ -312,7 +312,7 @@
             this.pictureBox_preview.Location = new System.Drawing.Point(3, 53);
             this.pictureBox_preview.Name = "pictureBox_preview";
             this.pictureBox_preview.Size = new System.Drawing.Size(413, 310);
-            this.pictureBox_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_preview.TabIndex = 0;
             this.pictureBox_preview.TabStop = false;
             // 
@@ -381,7 +381,6 @@
             this.panel_shopin_detail.ResumeLayout(false);
             this.tableLayoutPanel_detail.ResumeLayout(false);
             this.tableLayoutPanel_photoPreview.ResumeLayout(false);
-            this.tableLayoutPanel_photoPreview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

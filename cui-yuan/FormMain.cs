@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 using AForge.Video.DirectShow;
 
@@ -88,7 +89,11 @@ namespace cui_yuan
 
         private void btn_CamKa_Click(object sender, EventArgs e)
         {
+            btn_CamKa.Enabled = false;
 
+            pictureBox_preview.Image = videoPlayer_shopin.GetCurrentVideoFrame();
+
+            btn_CamKa.Enabled = true;
         }
     }
 }
