@@ -47,6 +47,12 @@
             this.groupBox_weight = new System.Windows.Forms.GroupBox();
             this.groupBox_notes = new System.Windows.Forms.GroupBox();
             this.tabPage_Shopout = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel_photoPreview = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox_preview = new AForge.Controls.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_CamKa = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPage_Shopin.SuspendLayout();
@@ -58,8 +64,13 @@
             this.tableLayoutPanel_videoPlayer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_photoPreview.SuspendLayout();
+            this.groupBox_photoPreview.SuspendLayout();
             this.panel_shopin_detail.SuspendLayout();
             this.tableLayoutPanel_detail.SuspendLayout();
+            this.tableLayoutPanel_photoPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
@@ -112,6 +123,7 @@
             this.tableLayoutPanel_Shopin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel_Shopin.Controls.Add(this.tableLayoutPanel_shopin_photo, 0, 0);
             this.tableLayoutPanel_Shopin.Controls.Add(this.panel_shopin_detail, 0, 1);
+            this.tableLayoutPanel_Shopin.Controls.Add(this.panel3, 1, 0);
             this.tableLayoutPanel_Shopin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_Shopin.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_Shopin.Name = "tableLayoutPanel_Shopin";
@@ -213,6 +225,7 @@
             // 
             // groupBox_photoPreview
             // 
+            this.groupBox_photoPreview.Controls.Add(this.tableLayoutPanel_photoPreview);
             this.groupBox_photoPreview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_photoPreview.Location = new System.Drawing.Point(0, 0);
             this.groupBox_photoPreview.Name = "groupBox_photoPreview";
@@ -275,6 +288,75 @@
             this.tabPage_Shopout.Text = "发货";
             this.tabPage_Shopout.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel_photoPreview
+            // 
+            this.tableLayoutPanel_photoPreview.ColumnCount = 1;
+            this.tableLayoutPanel_photoPreview.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_photoPreview.Controls.Add(this.pictureBox_preview, 0, 1);
+            this.tableLayoutPanel_photoPreview.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel_photoPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_photoPreview.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel_photoPreview.Name = "tableLayoutPanel_photoPreview";
+            this.tableLayoutPanel_photoPreview.RowCount = 2;
+            this.tableLayoutPanel_photoPreview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_photoPreview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_photoPreview.Size = new System.Drawing.Size(419, 366);
+            this.tableLayoutPanel_photoPreview.TabIndex = 0;
+            // 
+            // pictureBox_preview
+            // 
+            this.pictureBox_preview.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox_preview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_preview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox_preview.Image = null;
+            this.pictureBox_preview.Location = new System.Drawing.Point(3, 53);
+            this.pictureBox_preview.Name = "pictureBox_preview";
+            this.pictureBox_preview.Size = new System.Drawing.Size(413, 310);
+            this.pictureBox_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_preview.TabIndex = 0;
+            this.pictureBox_preview.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(413, 44);
+            this.panel2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(76, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(275, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "点击右侧的拍照按钮，预览照片";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btn_CamKa);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(870, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(94, 400);
+            this.panel3.TabIndex = 2;
+            // 
+            // btn_CamKa
+            // 
+            this.btn_CamKa.Location = new System.Drawing.Point(10, 316);
+            this.btn_CamKa.Name = "btn_CamKa";
+            this.btn_CamKa.Size = new System.Drawing.Size(75, 59);
+            this.btn_CamKa.TabIndex = 0;
+            this.btn_CamKa.Text = "拍照";
+            this.btn_CamKa.UseVisualStyleBackColor = true;
+            this.btn_CamKa.Click += new System.EventHandler(this.btn_CamKa_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -295,8 +377,15 @@
             this.tableLayoutPanel_videoPlayer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel_photoPreview.ResumeLayout(false);
+            this.groupBox_photoPreview.ResumeLayout(false);
             this.panel_shopin_detail.ResumeLayout(false);
             this.tableLayoutPanel_detail.ResumeLayout(false);
+            this.tableLayoutPanel_photoPreview.ResumeLayout(false);
+            this.tableLayoutPanel_photoPreview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -322,6 +411,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox_videoPlayer;
         private AForge.Controls.VideoSourcePlayer videoPlayer_shopin;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_photoPreview;
+        private AForge.Controls.PictureBox pictureBox_preview;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_CamKa;
     }
 }
 

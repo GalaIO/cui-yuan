@@ -85,5 +85,10 @@ namespace cui_yuan
                 MessageBox.Show("摄像头没有正常关闭");
             }
         }
+
+        private void btn_CamKa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
