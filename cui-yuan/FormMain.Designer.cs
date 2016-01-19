@@ -34,7 +34,7 @@
             this.tabPage_Shopout = new System.Windows.Forms.TabPage();
             this.panel_shopin = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_Shopin = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel_VideoPlayer = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_shopin_photo = new System.Windows.Forms.TableLayoutPanel();
             this.panel_videoPlayer = new System.Windows.Forms.Panel();
             this.panel_photoPreview = new System.Windows.Forms.Panel();
             this.groupBox_videoPlayer = new System.Windows.Forms.GroupBox();
@@ -43,16 +43,23 @@
             this.tableLayoutPanel_detail = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox_weight = new System.Windows.Forms.GroupBox();
             this.groupBox_notes = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel_videoPlayer = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox_videoPlayer = new System.Windows.Forms.ComboBox();
+            this.videoPlayer_shopin = new AForge.Controls.VideoSourcePlayer();
             this.panelMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPage_Shopin.SuspendLayout();
             this.panel_shopin.SuspendLayout();
             this.tableLayoutPanel_Shopin.SuspendLayout();
-            this.tableLayoutPanel_VideoPlayer.SuspendLayout();
+            this.tableLayoutPanel_shopin_photo.SuspendLayout();
             this.panel_videoPlayer.SuspendLayout();
             this.panel_photoPreview.SuspendLayout();
+            this.groupBox_videoPlayer.SuspendLayout();
             this.panel_shopin_detail.SuspendLayout();
             this.tableLayoutPanel_detail.SuspendLayout();
+            this.tableLayoutPanel_videoPlayer.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
@@ -111,7 +118,7 @@
             this.tableLayoutPanel_Shopin.ColumnCount = 2;
             this.tableLayoutPanel_Shopin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_Shopin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel_Shopin.Controls.Add(this.tableLayoutPanel_VideoPlayer, 0, 0);
+            this.tableLayoutPanel_Shopin.Controls.Add(this.tableLayoutPanel_shopin_photo, 0, 0);
             this.tableLayoutPanel_Shopin.Controls.Add(this.panel_shopin_detail, 0, 1);
             this.tableLayoutPanel_Shopin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_Shopin.Location = new System.Drawing.Point(0, 0);
@@ -122,20 +129,20 @@
             this.tableLayoutPanel_Shopin.Size = new System.Drawing.Size(967, 573);
             this.tableLayoutPanel_Shopin.TabIndex = 0;
             // 
-            // tableLayoutPanel_VideoPlayer
+            // tableLayoutPanel_shopin_photo
             // 
-            this.tableLayoutPanel_VideoPlayer.ColumnCount = 2;
-            this.tableLayoutPanel_VideoPlayer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_VideoPlayer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_VideoPlayer.Controls.Add(this.panel_videoPlayer, 0, 0);
-            this.tableLayoutPanel_VideoPlayer.Controls.Add(this.panel_photoPreview, 1, 0);
-            this.tableLayoutPanel_VideoPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_VideoPlayer.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel_VideoPlayer.Name = "tableLayoutPanel_VideoPlayer";
-            this.tableLayoutPanel_VideoPlayer.RowCount = 1;
-            this.tableLayoutPanel_VideoPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_VideoPlayer.Size = new System.Drawing.Size(861, 400);
-            this.tableLayoutPanel_VideoPlayer.TabIndex = 0;
+            this.tableLayoutPanel_shopin_photo.ColumnCount = 2;
+            this.tableLayoutPanel_shopin_photo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_shopin_photo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_shopin_photo.Controls.Add(this.panel_videoPlayer, 0, 0);
+            this.tableLayoutPanel_shopin_photo.Controls.Add(this.panel_photoPreview, 1, 0);
+            this.tableLayoutPanel_shopin_photo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_shopin_photo.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel_shopin_photo.Name = "tableLayoutPanel_shopin_photo";
+            this.tableLayoutPanel_shopin_photo.RowCount = 1;
+            this.tableLayoutPanel_shopin_photo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_shopin_photo.Size = new System.Drawing.Size(861, 400);
+            this.tableLayoutPanel_shopin_photo.TabIndex = 0;
             // 
             // panel_videoPlayer
             // 
@@ -157,6 +164,7 @@
             // 
             // groupBox_videoPlayer
             // 
+            this.groupBox_videoPlayer.Controls.Add(this.tableLayoutPanel_videoPlayer);
             this.groupBox_videoPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_videoPlayer.Location = new System.Drawing.Point(0, 0);
             this.groupBox_videoPlayer.Name = "groupBox_videoPlayer";
@@ -219,6 +227,51 @@
             this.groupBox_notes.TabStop = false;
             this.groupBox_notes.Text = "备注";
             // 
+            // tableLayoutPanel_videoPlayer
+            // 
+            this.tableLayoutPanel_videoPlayer.ColumnCount = 1;
+            this.tableLayoutPanel_videoPlayer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_videoPlayer.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel_videoPlayer.Controls.Add(this.videoPlayer_shopin, 0, 1);
+            this.tableLayoutPanel_videoPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_videoPlayer.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel_videoPlayer.Name = "tableLayoutPanel_videoPlayer";
+            this.tableLayoutPanel_videoPlayer.RowCount = 2;
+            this.tableLayoutPanel_videoPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_videoPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_videoPlayer.Size = new System.Drawing.Size(418, 366);
+            this.tableLayoutPanel_videoPlayer.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comboBox_videoPlayer);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(412, 44);
+            this.panel1.TabIndex = 0;
+            // 
+            // comboBox_videoPlayer
+            // 
+            this.comboBox_videoPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_videoPlayer.FormattingEnabled = true;
+            this.comboBox_videoPlayer.Location = new System.Drawing.Point(39, 9);
+            this.comboBox_videoPlayer.Name = "comboBox_videoPlayer";
+            this.comboBox_videoPlayer.Size = new System.Drawing.Size(323, 27);
+            this.comboBox_videoPlayer.TabIndex = 0;
+            // 
+            // videoPlayer_shopin
+            // 
+            this.videoPlayer_shopin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.videoPlayer_shopin.Location = new System.Drawing.Point(3, 53);
+            this.videoPlayer_shopin.Name = "videoPlayer_shopin";
+            this.videoPlayer_shopin.Size = new System.Drawing.Size(412, 310);
+            this.videoPlayer_shopin.TabIndex = 1;
+            this.videoPlayer_shopin.Text = "VideoPlayer";
+            this.videoPlayer_shopin.VideoSource = null;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -232,11 +285,14 @@
             this.tabPage_Shopin.ResumeLayout(false);
             this.panel_shopin.ResumeLayout(false);
             this.tableLayoutPanel_Shopin.ResumeLayout(false);
-            this.tableLayoutPanel_VideoPlayer.ResumeLayout(false);
+            this.tableLayoutPanel_shopin_photo.ResumeLayout(false);
             this.panel_videoPlayer.ResumeLayout(false);
             this.panel_photoPreview.ResumeLayout(false);
+            this.groupBox_videoPlayer.ResumeLayout(false);
             this.panel_shopin_detail.ResumeLayout(false);
             this.tableLayoutPanel_detail.ResumeLayout(false);
+            this.tableLayoutPanel_videoPlayer.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -249,7 +305,7 @@
         private System.Windows.Forms.TabPage tabPage_Shopout;
         private System.Windows.Forms.Panel panel_shopin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_Shopin;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_VideoPlayer;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_shopin_photo;
         private System.Windows.Forms.Panel panel_videoPlayer;
         private System.Windows.Forms.Panel panel_photoPreview;
         private System.Windows.Forms.GroupBox groupBox_videoPlayer;
@@ -258,6 +314,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_detail;
         private System.Windows.Forms.GroupBox groupBox_weight;
         private System.Windows.Forms.GroupBox groupBox_notes;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_videoPlayer;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox comboBox_videoPlayer;
+        private AForge.Controls.VideoSourcePlayer videoPlayer_shopin;
     }
 }
 
