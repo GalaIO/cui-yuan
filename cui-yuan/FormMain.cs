@@ -90,9 +90,12 @@ namespace cui_yuan
         private void btn_CamKa_Click(object sender, EventArgs e)
         {
             btn_CamKa.Enabled = false;
+            pictureBox_preview.Visible = false;
 
             pictureBox_preview.Image = videoPlayer_shopin.GetCurrentVideoFrame();
 
+            Thread.Sleep(100);
+            pictureBox_preview.Visible = true;
             btn_CamKa.Enabled = true;
         }
     }
